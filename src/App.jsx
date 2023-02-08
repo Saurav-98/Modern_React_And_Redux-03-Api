@@ -1,7 +1,16 @@
 import React from "react";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
-  return <div>Learning to Fetch Data from Api using Axios</div>;
+  const handleSubmit = (term) => {
+    console.log("Do a search with", term);
+  };
+
+  return (
+    <div>
+      <SearchBar onSubmit={handleSubmit} />
+    </div>
+  );
 };
 
 export default App;

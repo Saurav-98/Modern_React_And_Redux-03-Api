@@ -4,18 +4,21 @@ const BASE_URL = "https://api.unsplash.com/";
 const SEARCH_PHOTOS_ENDPOINT = "search/photos";
 const URL = BASE_URL + SEARCH_PHOTOS_ENDPOINT;
 
-const searchImages = async () => {
+// ************** Fetch Data From API Function
+
+const searchImages = async (term) => {
   const response = await axios.get(URL, {
     headers: {
       Authorization: `Client-ID ${ACCESS_KEY}`,
     },
     params: {
-      query: "babes",
+      query: "supernova",
     },
   });
 
-  console.log(response);
-  return response;
+  const data = response.data.results;
+  console.log(data);
+  return data;
 };
 
 export default searchImages;
