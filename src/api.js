@@ -12,12 +12,12 @@ const searchImages = async (term) => {
       Authorization: `Client-ID ${ACCESS_KEY}`,
     },
     params: {
-      query: "supernova",
+      query: term,
     },
   });
 
   const data = response.data.results;
-  console.log(data);
+  // console.log(data);
   return data;
 };
 
